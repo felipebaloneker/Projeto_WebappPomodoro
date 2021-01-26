@@ -1,6 +1,52 @@
-// Cronômetro
-var minuto = document.getElementById('minutos');
-var segundo = document.querySelector('#segundos'); 
+// Menus do pomodoro
+var strtimer = document.getElementById('minutos');
+var interface = document.querySelector('.interface');
+var timerbt =  document.querySelectorAll('.timer-bt')
+var btpomodoro = document.getElementById('pomodoro');
+var btintervalo = document.getElementById('intervalo');
+var btintlong = document.getElementById('intlong');
+var min =25;
+// Pagina Timer
+btpomodoro.addEventListener('click', function(event){
+  interface.style.background = '#890C06';
+  var i;
+  for(i = 0; i< timerbt.length; i++){
+    timerbt[i].style.backgroundColor = '#BC0B05';
+  }
+  strtimer.innerHTML = '25:00';
+})
 
-// menus do pomodoro
-
+// Pagina Pausa
+btintervalo.addEventListener('click', function(event){
+  interface.style.background = "#3089AA";
+  var i;
+  for(i = 0; i< timerbt.length; i++){
+    timerbt[i].style.backgroundColor = '#3089AA';
+  }
+  strtimer.innerHTML = '5:00';
+  min = 5;
+})
+// Pagina Pausa Longa
+btintlong.addEventListener('click', function(event){
+  interface.style.background = "#294D4B";
+  var i;
+  for(i = 0; i< timerbt.length; i++){
+    timerbt[i].style.background = '#294D4B';
+  }
+  strtimer.innerHTML = '15:00';
+  min = 15;
+})
+  // Temporizador
+  function Timer(){
+    var sec = 0;
+    if(sec == 0){
+      min -= 1;
+      sec += 60;
+    }
+    if(sec > 0){
+        setInterval(function(){
+            sec-=1;
+           strtimer.innerHTML = `${min}:${sec}`;
+        },1000)
+    }
+  }

@@ -28,6 +28,7 @@ p{
   height:100vh;
   background:#890C06;
 }
+
 .pg-principal{
   width:60%;
   height: 100vh;
@@ -68,10 +69,6 @@ p{
 .timer-string{
   font-size:72pt;
   margin: 20px;
-}
-.timer{
-  width:30%;
-  border:none;
 }
 .timer-bt{
   display: inline-block;
