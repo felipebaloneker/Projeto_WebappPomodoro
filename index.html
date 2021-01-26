@@ -6,7 +6,8 @@
 <link rel='stylesheet' href="style/style.css">
 </head>
 <body>
-  <section class='pg-principal'>
+  <section class='interface'>
+    <div class='pg-principal'>
     <div class="menu">
       <div class='logo'>
         Pomodoro-Timer
@@ -14,17 +15,20 @@
     </div>
       <div class="pomo-container">
               <button id='pomodoro'class="pomo-bt" type='submit'>Pomodoro</button>
-              <button id='intervalo'class="pomo-bt" type='submit' onclick='break()'>Intervalo</button>
+              <button id='intervalo'class="pomo-bt" type='submit'>Intervalo</button>
               <button id='intlong'class="pomo-bt" type='submit'>Intervalo longo</button>
-            <h1 class="timer-string">25:00</h1>
+            <div class="timer-string">
+              <input class="timer" id='minutos' value='25'>:<input class="timer" id= 'segundos' value='00'>
+            </div>
             <div class="timer-control">
               <button id='timer-start'class='timer-bt'type='submit'>INICIAR</button>
               <button id='timer-stop'class='timer-bt'type='submit'>PAUSAR</button>
               <button id='timer-reset'class='timer-bt'type='submit'>RESETAR</button>
             </div>
       </div>
+    </div>
   </section>
-  <section id = 'pg'>
+  <section class = 'pg'>
     <div class="container">
       <h2>Gerencie melhor o seu tempo de trabalho com Pomodoro-Timer.</h2>
     <article class="">
