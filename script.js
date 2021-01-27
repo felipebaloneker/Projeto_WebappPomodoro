@@ -6,7 +6,9 @@ var btpomodoro = document.getElementById('pomodoro');
 var btintervalo = document.getElementById('intervalo');
 var btintlong = document.getElementById('intlong');
 var min =25;
+
 // Pagina Timer
+    // Estilo da pagina
 btpomodoro.addEventListener('click', function(event){
   interface.style.background = '#890C06';
   var i;
@@ -14,6 +16,7 @@ btpomodoro.addEventListener('click', function(event){
     timerbt[i].style.backgroundColor = '#BC0B05';
   }
   strtimer.innerHTML = '25:00';
+  min = 25;
 })
 
 // Pagina Pausa
@@ -25,6 +28,8 @@ btintervalo.addEventListener('click', function(event){
   }
   strtimer.innerHTML = '5:00';
   min = 5;
+  
+
 })
 // Pagina Pausa Longa
 btintlong.addEventListener('click', function(event){
@@ -36,19 +41,23 @@ btintlong.addEventListener('click', function(event){
   strtimer.innerHTML = '15:00';
   min = 15;
 })
-  // Temporizador
-  function Timer(){
-    var sec = 0;
-    if(min > 0){
-        setInterval(function(){
-            if(sec > 0){
-                sec-=1;
-                strtimer.innerHTML = `${min}:${sec}`;
-            }
-            else if(sec == 0){
-                sec += 60;
-                min-=1;
-            }
-        },1000)
-    }
+
+ // Temporizador
+ let cron;
+ function startCountdown(){
+  pause();
+  var sec = 0;
+  cron = setInterval(function(){
+          if(sec > 0){
+              sec-=1;
+              strtimer.innerHTML = `${min}:${sec}`;
+          }
+          else if(sec == 0){
+              sec += 60;
+              min-=1;
+          }
+      },1000)}
+function pause(){
+  clearInterval(cron);
 }
+startCountdown();
