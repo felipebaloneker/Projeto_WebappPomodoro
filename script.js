@@ -39,14 +39,16 @@ btintlong.addEventListener('click', function(event){
   // Temporizador
   function Timer(){
     var sec = 0;
-    if(sec == 0){
-      min -= 1;
-      sec += 60;
-    }
-    if(sec > 0){
+    if(min > 0){
         setInterval(function(){
-            sec-=1;
-           strtimer.innerHTML = `${min}:${sec}`;
+            if(sec > 0){
+                sec-=1;
+                strtimer.innerHTML = `${min}:${sec}`;
+            }
+            else if(sec == 0){
+                sec += 60;
+                min-=1;
+            }
         },1000)
     }
-  }
+}
