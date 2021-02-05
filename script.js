@@ -7,15 +7,16 @@ var cont = 0;
 var string = document.getElementById('string');
 var btnStart = document.getElementById('start');
 var btnReset = document.getElementById('reset');
+var pgPrinc = document.getElementById('pg-princ');
 /* ---Ao clicar no botão Começar---*/
 function Start(){
   /* Trocando texto do botão ao clicar */
-  if(btnStart.textContent === 'Começar'){
+  if(btnStart.textContent === 'Iniciar'){
     btnStart.textContent = 'Pausar';
     timerStart();
   }
   else{
-    btnStart.textContent = 'Começar';
+    btnStart.textContent = 'Iniciar';
     timerStop();
   }
 }
@@ -42,8 +43,8 @@ function Start(){
       min = minut;
       sec = second;
       clearInterval(minutes);
-      string.textContent = `${min}:${sec}`;      
-      btnStart.textContent = 'Começar';}
+      string.textContent = `${min}:${sec}0`;      
+      btnStart.textContent = 'Iniciar';}
     btnReset.addEventListener('click',timerReset)
 
 /* Menus do app */
@@ -54,14 +55,16 @@ var btnPausal = document.getElementById('pausal');
 function Pomodoro(){
   min = 25;
   sec = 0;
-  string.textContent = `${min}:${sec}`;
+  string.textContent = `${min}:${sec}0`;
+  pgPrinc.style.background = '#C94040';
 }
 btnPomodoro.addEventListener('click',Pomodoro);
     /* Pausa */
 function Pausa(){
   min = 5;
   sec = 0;
-  string.textContent = `${min}:${sec}`;
+  string.textContent = `0${min}:${sec}0`;
+  pgPrinc.style.background = '#55ADA9';
   cont ++;
 }
 btnPausa.addEventListener('click',Pausa);
@@ -69,6 +72,7 @@ btnPausa.addEventListener('click',Pausa);
 function PausaLonga(){
   min = 15;
   sec = 0;
-  string.textContent = `${min}:${sec}`
+  string.textContent = `${min}:${sec}0`;
+  pgPrinc.style.background = '#3089AA';
 }
 btnPausal.addEventListener('click',PausaLonga);

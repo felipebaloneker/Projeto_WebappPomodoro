@@ -3,22 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name='description' content='Pomodoro um metodo de gerenciar melhor seu tempo de trabalho'>
+  <meta name='keywords' content ='Pomodoro, Timer, app browser'>
+  <meta name='author' content='Felipe Baloneker'>
+  <link rel='stylesheet' href='style/style.css'>
   <title>Pomodoro Timer</title>
 </head>
 <body>
-  <section class='app'>
+  <section class='app' id='pg-princ'>
+    <header><h2 class='logo'>Pomodoro-Timer</h2></header>
     <div class='container'>
       <div class='menu'>
         <button class='btn-menu' id='pomodoro'>Pomodoro</button>
         <button class='btn-menu' id='pausa'>Pausa</button>
         <button class='btn-menu' id='pausal'>PausaLonga</button>
       </div>
+      <h2 class='timer-str' id='string'>25:00</h2>
       <div class='timer'>
-        <h2 class='timer-str' id='string'>25:00</h2>
-        <button class='btn' id='start'>Começar</button>
-        <button class='btn' id='reset'>Recomeçar</button>
+        <button class='btn' id='start'>Iniciar</button>
+        <button class='btn' id='reset'>Redefinir</button>
       </div>
-    </div>
     </div>
   </section>
   <script type='text/javascript' src='script.js'></script>
