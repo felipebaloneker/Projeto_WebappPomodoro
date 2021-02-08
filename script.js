@@ -28,7 +28,7 @@ function Start(){
     function timerStart(){
       minutes = setInterval(function(){
           if(sec == 0){sec+=60;min-=1;}
-          else if(min < 0){clearInterval;Notify();NextScreen();}
+          else if(min < 0){clearInterval;NextScreen();}
           else{sec-=1;string.innerHTML = `${min}:${sec}`;}
       },1000)
       }
@@ -46,10 +46,10 @@ function Start(){
 
 /*---Menus do app--- */
 var btnMenu = document.querySelectorAll('.btn-menu');
-var click;
+var click = 0;
     /* Pomodoro */
 function Pomodoro(){
-  click == 0;
+  click = 0;
   min = 25;
   sec = 0;
   minut = min; // guardando valores iniciais
@@ -60,7 +60,7 @@ function Pomodoro(){
 btnMenu[0].addEventListener('click',Pomodoro);
     /* Pausa */
 function Pausa(){
-  click == 1;
+  click = 1;
   min = 5;
   sec = 0;
   minut = min; 
@@ -71,7 +71,7 @@ function Pausa(){
 btnMenu[1].addEventListener('click',Pausa);
   /* Pausa Longa */
 function PausaLonga(){
-  click == 2;
+  click = 2;
   min = 15;
   sec = 0;
   minut = min; 
@@ -82,9 +82,8 @@ function PausaLonga(){
 btnMenu[2].addEventListener('click',PausaLonga);
 
 /*--- Notificação ---*/
-var audio = new Audio('notify/sound.mp3');
 function Notify(){
-  audio.play();
+  new Audio('notify/sound.mp3').play();
 }
 
 /*--- Contagem até pausa longa ---*/
@@ -94,8 +93,9 @@ function Circle(){
 }
 /* -- Trocando de tela após termino da contagem ---*/
 function NextScreen(){
-  if(click == 0 && cont < 4){Pausa;cont++;Circle();}
-  else if(click == 0 && cont == 4){PausaLonga; cont == 0;}
-  else if(click == 1){Pomodoro;}
-  else{Pomodoro}
+  Notify();
+  if(click == 0 && cont < 4){Pausa();cont++;Circle();}
+  else if(click == 0 && cont == 4){PausaLonga(); cont == 0;}
+  else if(click == 1){Pomodoro();}
+  else{Pomodoro();}
 }
