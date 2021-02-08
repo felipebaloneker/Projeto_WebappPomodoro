@@ -41,6 +41,7 @@ header{
 }
 /* botões e menus*/
 .container{
+    display: block;
     width:70%;
     height: 40%;
     margin: 10% auto;
@@ -103,7 +104,23 @@ header{
 }
 
 /* Pagina Sobre*/
-.pg{width:70%;margin: auto; padding:10%;background-color:#ffff}
+.pg{width:70%;height:90%;margin: auto; padding:10%;background-color:#ffff}
 
 /* footer*/
 footer{height:3%;font-size:0.8em;color:#fff;text-align:center;background-color: #C94040;padding:1%;}
+
+/* ----Mobile First----*/
+/* Tablets 768px*/
+@media screen and (min-width: 768px){
+    .container{width:40%;height: 40%;margin: 3% auto;padding: 5% 0%;}
+    .pg{padding:5%;}
+    p{font-size:1.5em;}
+    h2{font-size:2em;}
+}
+/* Tablets & Laptop 960px*/
+@media screen and (min-width: 960px){
+    .container{width:20%; height:35%;margin:3% auto; padding:5%;}
+    .btn-timer{padding:5%;}
+    .pg{padding:3%;height:85%;}
+    footer{height:2%;}
+}
