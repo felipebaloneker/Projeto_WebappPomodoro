@@ -41,10 +41,9 @@ header{
 }
 /* botões e menus*/
 .container{
-    display: block;
-    width:70%;
-    height: 40%;
-    margin: 10% auto;
+    width:80%;
+    height: 30%;
+    margin: 30% auto;
     padding: 10% 0%;
     text-align:center;
     border-radius: 50%;
@@ -57,7 +56,7 @@ header{
     all:unset;
     background-color: transparent;
     padding: 1%;
-    font-size:1em;
+    font-size:0.8em;
     text-align: center;
     color:#fff;
     cursor:pointer;
@@ -67,7 +66,7 @@ header{
     color:#C94040;
 }
 .timer-str{
-    font-size: 6em;
+    font-size: 4em;
     font-family: 'Fredoka One',Arial, sans-serif;
     color:#fff;
     border-radius: 50%;
@@ -110,17 +109,22 @@ header{
 footer{height:3%;font-size:0.8em;color:#fff;text-align:center;background-color: #C94040;padding:1%;}
 
 /* ----Mobile First----*/
-/* Tablets 768px*/
-@media screen and (min-width: 768px){
-    .container{width:40%;height: 40%;margin: 3% auto;padding: 5% 0%;}
-    .pg{padding:5%;}
-    p{font-size:1.5em;}
-    h2{font-size:2em;}
+/* Small devices 667px*/
+@media screen and (min-width:667px){
+.container{
+    width:70%;
+    height: 35%;
+
 }
+
 /* Tablets & Laptop 960px*/
 @media screen and (min-width: 960px){
     .container{width:20%; height:35%;margin:3% auto; padding:5%;}
+    .btn-menu{font-size:1em}
     .btn-timer{padding:5%;}
     .pg{padding:3%;height:85%;}
+    .timer-str{font-size:6em}
     footer{height:2%;}
+    h2{font-size:2.5em}
+    p{font-size:1.5em}
 }
