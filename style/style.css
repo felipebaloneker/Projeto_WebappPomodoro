@@ -41,12 +41,14 @@ header{
 }
 /* botões e menus*/
 .container{
+    display: block;
     width:80%;
     height: 30%;
-    margin: 30% auto;
+    margin: 10% auto;
     padding: 10% 0%;
+    align-items: center;
     text-align:center;
-    border-radius: 50%;
+    border-radius: 20%;
     background-color: rgba(255, 255, 255, 0.5);
 }
 .menu{
@@ -68,14 +70,15 @@ header{
 .timer-str{
     font-size: 4em;
     font-family: 'Fredoka One',Arial, sans-serif;
+    text-align: center;
     color:#fff;
     border-radius: 50%;
     margin: auto;
 }
 .btn-timer{
     all:unset;
-    width: 30%;
-    padding:2%;
+    width: 25%;
+    padding:3%;
     font-size:1.12em;
     font-family: 'Fredoka One',Arial, sans-serif;
     border-radius: 25px;
@@ -89,9 +92,8 @@ header{
 }
 /* Contagem ate pausa longa*/
 .progress{
-    width:30%;
+    width:60%;
     margin: 5% auto;
-    
 }
 .progress div{
     display: inline-block;
@@ -116,12 +118,11 @@ footer{height:3%;font-size:0.8em;color:#fff;text-align:center;background-color: 
     height: 35%;
 
 }
-
 /* Tablets & Laptop 960px*/
 @media screen and (min-width: 960px){
-    .container{width:20%; height:40%;margin:3% auto; padding:5%;}
+    .container{width:20%; height:35%;margin:3% auto; padding:5%;}
     .btn-menu{font-size:1em}
-    .btn-timer{padding:5%;}
+    .btn-timer{width:35%;padding:5%;}
     .pg{padding:3%;height:85%;}
     .timer-str{font-size:6em}
     footer{height:2%;}
