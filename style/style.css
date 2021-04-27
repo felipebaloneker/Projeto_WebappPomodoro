@@ -120,7 +120,7 @@ footer{height:3%;font-size:0.8em;color:#fff;text-align:center;background-color: 
 }
 /* Tablets & Laptop 960px*/
 @media screen and (min-width: 960px){
-    .container{width:20%; height:35%;margin:3% auto; padding:5%;}
+    .container{width:20%; height:40%;margin:3% auto; padding:5%;padding-top:3%;}
     .btn-menu{font-size:1em}
     .btn-timer{width:35%;padding:5%;}
     .pg{padding:3%;height:85%;}
